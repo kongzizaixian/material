@@ -1,0 +1,10 @@
+T上午9时06分18秒] Xinliang Liu: make ARCH=arm64 CROSS_COMPILE=$CROSS_TOOLCHAIN Image hi6220-hikey.dtb modules INSTALL_MOD_PATH=$out modules_install -j40
+[CST上午9时10分20秒] Xinliang Liu: simg2img $DEBIAN_DIR/$EMMC_IMAGE raw.img
+
+sudo mount raw.img raw-files
+[CST上午9时10分21秒] Xinliang Liu: sudo make_ext4fs -L rootfs -l 1500M -s $EMMC_IMAGE raw-files
+
+sudo umount raw-files
+ 2015年5月27日星期三
+[CST下午3时44分13秒] Xinliang Liu: https://builds.96boards.org/snapshots/hikey/debian/305
+
