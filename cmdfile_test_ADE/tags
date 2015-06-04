@@ -1,0 +1,279 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADE_CH_NUM_MAX	v8r1_commandfile_test.h	34;"	d
+ADE_DEV_FILE_PATH	v8r1_commandfile_test.h	44;"	d
+ADE_OFF_DEBUGFS	v8r1_commandfile_test.h	46;"	d
+ALIGN_DOWN	v8r1_commandfile_overlay_display.c	46;"	d	file:
+ALIGN_UP	v8r1_commandfile_overlay_display.c	43;"	d	file:
+FB_DEV_FILE_PATH	v8r1_commandfile_test.h	43;"	d
+HAL_PIXEL_FORMAT_BGRA_8888	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_BGRA_8888          = 5,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_CbYCrY_420_I	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_CbYCrY_420_I       = 0x17,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_CbYCrY_422_I	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_CbYCrY_422_I       = 0x16,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_RGBA_4444	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_RGBA_4444          = 7,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_RGBA_5551	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_RGBA_5551          = 6,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_RGBA_8888	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_RGBA_8888          = 1,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_RGBX_8888	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_RGBX_8888          = 2,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_RGB_565	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_RGB_565            = 4,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_RGB_888	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_RGB_888            = 3,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_UYVY_422_I	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_UYVY_422_I       = 0x24,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_VYUY_422_I	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_VYUY_422_I       = 0x26,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCbCr_420_I	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCbCr_420_I        = 0x15,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCbCr_420_P	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCbCr_420_P        = 0x13,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCbCr_420_SP	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCbCr_420_SP       = 0x21,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCbCr_420_SP_TILED	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCbCr_420_SP_TILED = 0x20,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCbCr_422_I	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCbCr_422_I        = 0x14, \/\/ YUY2$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCbCr_422_P	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCbCr_422_P        = 0x12,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCbCr_422_SP	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCbCr_422_SP       = 0x10, \/\/ NV16$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCrCb_420_SP	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCrCb_420_SP       = 0x11, \/\/ NV21$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCrCb_420_SP_INTERLACE	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCrCb_420_SP_INTERLACE = 0x10C,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCrCb_420_SP_TILED	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCrCb_420_SP_TILED = 0x22,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YCrCb_422_SP	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YCrCb_422_SP       = 0x23,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YUYV_422_I	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YUYV_422_I       = 0x23,$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YV12	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YV12   = 0x32315659, \/\/ YCrCb 4:2:0 Planar$/;"	e	enum:__anon1
+HAL_PIXEL_FORMAT_YVYU_422_I	v8r1_commandfile_test.h	/^    HAL_PIXEL_FORMAT_YVYU_422_I       = 0x25,$/;"	e	enum:__anon1
+HAL_TRANSFORM_FLIP_H	v8r1_commandfile_test.h	/^    HAL_TRANSFORM_FLIP_H    = 0x01,$/;"	e	enum:__anon2
+HAL_TRANSFORM_FLIP_V	v8r1_commandfile_test.h	/^    HAL_TRANSFORM_FLIP_V    = 0x02,$/;"	e	enum:__anon2
+HAL_TRANSFORM_ROT_180	v8r1_commandfile_test.h	/^    HAL_TRANSFORM_ROT_180   = 0x03,$/;"	e	enum:__anon2
+HAL_TRANSFORM_ROT_270	v8r1_commandfile_test.h	/^    HAL_TRANSFORM_ROT_270   = 0x07,$/;"	e	enum:__anon2
+HAL_TRANSFORM_ROT_90	v8r1_commandfile_test.h	/^    HAL_TRANSFORM_ROT_90    = 0x04,$/;"	e	enum:__anon2
+HISI_ION_ALLOC_FLAG	v8r1_commandfile_test.h	75;"	d
+HISI_ION_HEAP_ID	v8r1_commandfile_test.h	/^enum HISI_ION_HEAP_ID {$/;"	g
+HISI_ION_HEAP_IOMMU_ID	v8r1_commandfile_test.h	/^	HISI_ION_HEAP_IOMMU_ID,$/;"	e	enum:HISI_ION_HEAP_ID
+HISI_ION_HEAP_IOMMU_USER_MASK	v8r1_commandfile_test.h	74;"	d
+HWC_BLENDING_COVERAGE	v8r1_commandfile_test.h	50;"	d
+HWC_BLENDING_PREMULT	v8r1_commandfile_test.h	49;"	d
+INVALID_HEAP_ID	v8r1_commandfile_test.h	/^	INVALID_HEAP_ID = -1,$/;"	e	enum:HISI_ION_HEAP_ID
+IOMMU_PAGE_SHIFT	v8r1_commandfile_test.h	71;"	d
+IOMMU_PAGE_SIZE	v8r1_commandfile_test.h	72;"	d
+ION_CAMERA_HEAP_ID	v8r1_commandfile_test.h	/^	ION_CAMERA_HEAP_ID = 6,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_CPU_DRAW_HEAP_ID	v8r1_commandfile_test.h	/^	ION_CPU_DRAW_HEAP_ID = 5,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_DEV_FILE_NAME	v8r1_commandfile_test.h	42;"	d
+ION_DMA_HEAP_ID	v8r1_commandfile_test.h	/^	ION_DMA_HEAP_ID = 3,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_DMA_POOL_HEAP_ID	v8r1_commandfile_test.h	/^	ION_DMA_POOL_HEAP_ID = 4,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_FB_HEAP_ID	v8r1_commandfile_test.h	/^    ION_FB_HEAP_ID = 10,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_FLAG_CACHED	v8r1_commandfile_test.h	77;"	d
+ION_FLAG_CACHED_NEEDS_SYNC	v8r1_commandfile_test.h	81;"	d
+ION_GRALLOC_HEAP_ID	v8r1_commandfile_test.h	/^	ION_GRALLOC_HEAP_ID = 2,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_HEAP_ID_RESERVED	v8r1_commandfile_test.h	/^	ION_HEAP_ID_RESERVED = 31 \/* Bit reserved *\/$/;"	e	enum:HISI_ION_HEAP_ID
+ION_HISI_CUSTOM_FREE_KERN_VA	v8r1_commandfile_test.h	/^    ION_HISI_CUSTOM_FREE_KERN_VA,$/;"	e	enum:ION_K3V2_CUSTOM_CMD
+ION_HISI_CUSTOM_GET_KERN_VA	v8r1_commandfile_test.h	/^    ION_HISI_CUSTOM_GET_KERN_VA,$/;"	e	enum:ION_K3V2_CUSTOM_CMD
+ION_HISI_CUSTOM_ISSUPPORT_IOMMU	v8r1_commandfile_test.h	/^    ION_HISI_CUSTOM_ISSUPPORT_IOMMU,$/;"	e	enum:ION_K3V2_CUSTOM_CMD
+ION_HISI_CUSTOM_PHYS	v8r1_commandfile_test.h	/^	ION_HISI_CUSTOM_PHYS,$/;"	e	enum:ION_K3V2_CUSTOM_CMD
+ION_HISI_FLUSH_ALL_CACHES	v8r1_commandfile_test.h	/^	ION_HISI_FLUSH_ALL_CACHES,$/;"	e	enum:ION_K3V2_CUSTOM_CMD
+ION_ISP_HEAP_ID	v8r1_commandfile_test.h	/^    ION_ISP_HEAP_ID = 9,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_JPU_HEAP_ID	v8r1_commandfile_test.h	/^    ION_JPU_HEAP_ID = 12,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_K3V2_CUSTOM_CMD	v8r1_commandfile_test.h	/^enum ION_K3V2_CUSTOM_CMD {$/;"	g
+ION_OVERLAY_HEAP_ID	v8r1_commandfile_test.h	/^	ION_OVERLAY_HEAP_ID = 7,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_SYSTEM_CONTIG_HEAP_ID	v8r1_commandfile_test.h	/^	ION_SYSTEM_CONTIG_HEAP_ID = 1,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_SYSTEM_HEAP_ID	v8r1_commandfile_test.h	/^	ION_SYSTEM_HEAP_ID = 0,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_VCODEC_HEAP_ID	v8r1_commandfile_test.h	/^    ION_VCODEC_HEAP_ID = 8,$/;"	e	enum:HISI_ION_HEAP_ID
+ION_VPU_HEAP_ID	v8r1_commandfile_test.h	/^    ION_VPU_HEAP_ID = 11,$/;"	e	enum:HISI_ION_HEAP_ID
+K3V2_ION_HEAP_CAMERA_ID	v8r1_commandfile_test.h	/^	K3V2_ION_HEAP_CAMERA_ID = 1,$/;"	e	enum:K3V2_ION_HEAP_ID
+K3V2_ION_HEAP_GRALLOC_ID	v8r1_commandfile_test.h	/^	K3V2_ION_HEAP_GRALLOC_ID,$/;"	e	enum:K3V2_ION_HEAP_ID
+K3V2_ION_HEAP_ID	v8r1_commandfile_test.h	/^enum K3V2_ION_HEAP_ID {$/;"	g
+K3V2_ION_HEAP_K3V2_ID	v8r1_commandfile_test.h	/^	K3V2_ION_HEAP_K3V2_ID,$/;"	e	enum:K3V2_ION_HEAP_ID
+K3V2_ION_HEAP_OVERLAY_ID	v8r1_commandfile_test.h	/^	K3V2_ION_HEAP_OVERLAY_ID,$/;"	e	enum:K3V2_ION_HEAP_ID
+K3V2_ION_HEAP_SYS_CONTIG_ID	v8r1_commandfile_test.h	/^	K3V2_ION_HEAP_SYS_CONTIG_ID,$/;"	e	enum:K3V2_ION_HEAP_ID
+K3V2_ION_HEAP_SYS_ID	v8r1_commandfile_test.h	/^	K3V2_ION_HEAP_SYS_ID,$/;"	e	enum:K3V2_ION_HEAP_ID
+K3V2_ION_HEAP_USER_ID	v8r1_commandfile_test.h	/^	K3V2_ION_HEAP_USER_ID,$/;"	e	enum:K3V2_ION_HEAP_ID
+LCD_FILE2	v8r1_commandfile_pan_display.c	/^char const*const LCD_FILE2 = "\/sys\/class\/leds\/lcd_backlight0\/brightness";$/;"	v
+LOCAL_C_INCLUDES	Android.mk	/^LOCAL_C_INCLUDES:= \\$/;"	m
+LOCAL_FORCE_STATIC_EXECUTABLE	Android.mk	/^LOCAL_FORCE_STATIC_EXECUTABLE := true$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE = test-v8r1-ade-cmd$/;"	m
+LOCAL_MODULE_TAGS	Android.mk	/^LOCAL_MODULE_TAGS := eng$/;"	m
+LOCAL_PATH	Android.mk	/^LOCAL_PATH:= $(call my-dir)$/;"	m
+LOCAL_SRC_FILES	Android.mk	/^LOCAL_SRC_FILES := v8r1_commandfile_test.c v8r1_commandfile_overlay_display.c  v8r1_commandfile_open_fb.c  v8r1_commandfile_comm.c  v8r1_commandfile_pan_display.c v8r1_commandfile_overlay_switch.c$/;"	m
+LOCAL_STATIC_LIBRARIES	Android.mk	/^LOCAL_STATIC_LIBRARIES := libc$/;"	m
+OVERLAY_IMAGE_ST	v8r1_commandfile_test.h	/^struct OVERLAY_IMAGE_ST{$/;"	s
+OVERLAY_IMAGE_ST::filelen	v8r1_commandfile_test.h	/^    uint32_t            filelen;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+OVERLAY_IMAGE_ST::format	v8r1_commandfile_test.h	/^    uint32_t            format;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+OVERLAY_IMAGE_ST::height	v8r1_commandfile_test.h	/^    uint32_t            height;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+OVERLAY_IMAGE_ST::hnd_id	v8r1_commandfile_test.h	/^    uint32_t            hnd_id;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+OVERLAY_IMAGE_ST::phy_addr	v8r1_commandfile_test.h	/^    uint32_t            phy_addr;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+OVERLAY_IMAGE_ST::share_fd	v8r1_commandfile_test.h	/^    uint32_t            share_fd;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+OVERLAY_IMAGE_ST::stride	v8r1_commandfile_test.h	/^    uint32_t            stride;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+OVERLAY_IMAGE_ST::width	v8r1_commandfile_test.h	/^    uint32_t            width;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+PATTERN_ID_FILE	v8r1_commandfile_overlay_switch.c	18;"	d	file:
+PMEM_DEV_FILE_NAME	v8r1_commandfile_test.h	41;"	d
+STR_MAX_LEN	v8r1_commandfile_overlay_display.c	40;"	d	file:
+____V8R1_COMMANDFILE_TEST_H____	v8r1_commandfile_test.h	2;"	d
+block_rot_addr	v8r1_commandfile_test.h	/^	int*            block_rot_addr;$/;"	m	struct:st_ch_display_info	access:public
+bpps	v8r1_commandfile_pan_display.c	/^int bpps[2] = {32,32};$/;"	v
+cfg_disable	v8r1_commandfile_test.h	/^	uint32_t	cfg_disable;$/;"	m	struct:st_ch_display_info	access:public
+ch	v8r1_commandfile_test.h	/^	int			ch;$/;"	m	struct:st_ch_display_info	access:public
+ch_cap	v8r1_commandfile_test.h	/^	uint32_t    ch_cap;$/;"	m	struct:st_ch_display_info	access:public
+ch_type	v8r1_commandfile_test.h	/^	uint32_t    ch_type;$/;"	m	struct:st_ch_display_info	access:public
+cmdfile_test_get_patten_id	v8r1_commandfile_overlay_switch.c	/^int cmdfile_test_get_patten_id(void)$/;"	f	signature:(void)
+cmdfile_test_overlay_mode_switch	v8r1_commandfile_overlay_switch.c	/^void cmdfile_test_overlay_mode_switch(char* pattern, char* pic1_name, char* pic2_name, char* pic3_name,$/;"	f	signature:(char* pattern, char* pic1_name, char* pic2_name, char* pic3_name, char* pic4_name, char* pic5_name, char* pic6_name,char* ch_list, char* ovly_map, char* dst_rect, char* rotation, char* comp_rot, char* ovly_rect)
+cmdfile_test_overlay_mode_switch	v8r1_commandfile_test.h	/^extern void cmdfile_test_overlay_mode_switch(char* pattern, char* pic1_name, char* pic2_name, char* pic3_name,$/;"	p	signature:(char* pattern, char* pic1_name, char* pic2_name, char* pic3_name, char* pic4_name, char* pic5_name, char* pic6_name,char* ch_list, char* ovly_map, char* dst_rect, char* rotation, char* comp_rot, char* ovly_rect)
+cmdfile_test_overlay_mode_switch_stop	v8r1_commandfile_overlay_switch.c	/^void cmdfile_test_overlay_mode_switch_stop()$/;"	f
+cmdfile_test_overlay_mode_switch_stop	v8r1_commandfile_test.h	/^extern void cmdfile_test_overlay_mode_switch_stop();$/;"	p	signature:()
+cmdfile_test_overlay_start_self_refresh	v8r1_commandfile_overlay_switch.c	/^int cmdfile_test_overlay_start_self_refresh(int ade_fd)$/;"	f	signature:(int ade_fd)
+cmdfile_test_set_patten_id	v8r1_commandfile_overlay_switch.c	/^void cmdfile_test_set_patten_id(int pattern_id)$/;"	f	signature:(int pattern_id)
+codec_mem_alloc_proc	v8r1_commandfile_overlay_switch.c	/^int codec_mem_alloc_proc(char *eventflag, char *memsize)$/;"	f	signature:(char *eventflag, char *memsize)
+codec_mem_alloc_proc	v8r1_commandfile_test.h	/^extern int codec_mem_alloc_proc(char *eventflag, char *memsize); $/;"	p	signature:(char *eventflag, char *memsize)
+comfile_test_overlay_memshare	v8r1_commandfile_overlay_display.c	/^int comfile_test_overlay_memshare(char* patternIndex, char* pic1_name, char* pic2_name, char* pic3_name,$/;"	f	signature:(char* patternIndex, char* pic1_name, char* pic2_name, char* pic3_name, char* pic4_name, char* pic5_name, char* pic6_name,char* ch_list, char* ovly_map, char* dst_rect, char* rotation, char* comp_rot, char* ovly_rect)
+comfile_test_overlay_memshare	v8r1_commandfile_test.h	/^extern int comfile_test_overlay_memshare(char* patternIndex, char* pic1_name, char* pic2_name, char* pic3_name,$/;"	p	signature:(char* patternIndex, char* pic1_name, char* pic2_name, char* pic3_name, char* pic4_name, char* pic5_name, char* pic6_name,char* ch_list, char* ovly_map, char* dst_rect, char* rotation, char* comp_rot, char* ovly_rect)
+commandfile_test_blk_rot	v8r1_commandfile_overlay_display.c	/^int commandfile_test_blk_rot(char* patternIndex, char* pic_name1, char* pic_name2, char* pic_name3, char* pic_name4, char* pic_name5, char* pic_name6,char* ch_list, $/;"	f	signature:(char* patternIndex, char* pic_name1, char* pic_name2, char* pic_name3, char* pic_name4, char* pic_name5, char* pic_name6,char* ch_list, char * ovly_map, char* dst_rect, char* rotation, char* out_format, char* wdma_num)
+commandfile_test_blk_rot	v8r1_commandfile_test.c	/^extern int commandfile_test_blk_rot(char* patternIndex, char* pic_name1, char* pic_name2, char* pic_name3, char* pic_name4, char* pic_name5, char* pic_name6,char* ch_list, $/;"	p	file:	signature:(char* patternIndex, char* pic_name1, char* pic_name2, char* pic_name3, char* pic_name4, char* pic_name5, char* pic_name6,char* ch_list, char * ovly_map, char* dst_rect, char* rotation, char* out_format, char* wdma_num)
+commandfile_test_overlay_display	v8r1_commandfile_overlay_display.c	/^int commandfile_test_overlay_display(char* patternIndex, char* pic1_name, char* pic2_name, char* pic3_name,$/;"	f	signature:(char* patternIndex, char* pic1_name, char* pic2_name, char* pic3_name, char* pic4_name, char* pic5_name, char* pic6_name,char* ch_list, char* ovly_map, char* dst_rect, char* rotation, char* comp_rot, char* ovly_rect)
+commandfile_test_overlay_display	v8r1_commandfile_test.h	/^extern int commandfile_test_overlay_display(char* patternIndex, char* pic1_name, char* pic2_name, char* pic3_name,$/;"	p	signature:(char* patternIndex, char* pic1_name, char* pic2_name, char* pic3_name, char* pic4_name, char* pic5_name, char* pic6_name,char* ch_list, char* ovly_map, char* dst_rect, char* rotation, char* comp_rot, char* ovly_rect)
+comp_mode	v8r1_commandfile_test.h	/^	uint32_t    comp_mode;$/;"	m	struct:st_ch_display_info	access:public
+dest_rect	v8r1_commandfile_test.h	/^	struct ade_rect dest_rect;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::ade_rect	access:public
+dump_screen_info	v8r1_commandfile_pan_display.c	/^void dump_screen_info(struct fb_fix_screeninfo *fi, struct fb_var_screeninfo *vi)$/;"	f	signature:(struct fb_fix_screeninfo *fi, struct fb_var_screeninfo *vi)
+fb_set_ade_power_off	v8r1_commandfile_open_fb.c	/^void fb_set_ade_power_off(int val)$/;"	f	signature:(int val)
+fb_set_ade_power_off	v8r1_commandfile_test.h	/^extern void fb_set_ade_power_off(int val);$/;"	p	signature:(int val)
+fb_test_close_ade	v8r1_commandfile_open_fb.c	/^int fb_test_close_ade(void)$/;"	f	signature:(void)
+fb_test_close_ade	v8r1_commandfile_overlay_display.c	/^extern int fb_test_close_ade(void);$/;"	p	file:	signature:(void)
+fb_test_close_ade	v8r1_commandfile_overlay_switch.c	/^extern int fb_test_close_ade(void);$/;"	p	file:	signature:(void)
+fb_test_close_fb	v8r1_commandfile_open_fb.c	/^int fb_test_close_fb(void)$/;"	f	signature:(void)
+fb_test_close_fb	v8r1_commandfile_overlay_display.c	/^extern int fb_test_close_fb(void);$/;"	p	file:	signature:(void)
+fb_test_close_fb	v8r1_commandfile_overlay_switch.c	/^extern int fb_test_close_fb(void);$/;"	p	file:	signature:(void)
+fb_test_close_fb	v8r1_commandfile_pan_display.c	/^extern int fb_test_close_fb(void);$/;"	p	file:	signature:(void)
+fb_test_get_fb	v8r1_commandfile_open_fb.c	/^int fb_test_get_fb(void)$/;"	f	signature:(void)
+fb_test_open_ade	v8r1_commandfile_open_fb.c	/^int fb_test_open_ade(void)$/;"	f	signature:(void)
+fb_test_open_ade	v8r1_commandfile_overlay_display.c	/^extern int fb_test_open_ade(void);$/;"	p	file:	signature:(void)
+fb_test_open_ade	v8r1_commandfile_overlay_switch.c	/^extern int fb_test_open_ade(void);$/;"	p	file:	signature:(void)
+fb_test_open_fb	v8r1_commandfile_comm.c	/^extern int fb_test_open_fb(void);$/;"	p	file:	signature:(void)
+fb_test_open_fb	v8r1_commandfile_open_fb.c	/^int fb_test_open_fb(void)$/;"	f	signature:(void)
+fb_test_open_fb	v8r1_commandfile_overlay_display.c	/^extern int fb_test_open_fb(void);$/;"	p	file:	signature:(void)
+fb_test_open_fb	v8r1_commandfile_overlay_switch.c	/^extern int fb_test_open_fb(void);$/;"	p	file:	signature:(void)
+fb_test_open_fb	v8r1_commandfile_pan_display.c	/^extern int fb_test_open_fb(void);$/;"	p	file:	signature:(void)
+fb_test_openclose_ade	v8r1_commandfile_open_fb.c	/^int fb_test_openclose_ade(char* opp)$/;"	f	signature:(char* opp)
+fb_test_overlay_display_unit	v8r1_commandfile_overlay_display.c	/^int fb_test_overlay_display_unit(struct   st_ch_display_info  *ch_display_info, struct   st_ch_display_info  *pan_ch_display_info)$/;"	f	signature:(struct st_ch_display_info *ch_display_info, struct st_ch_display_info *pan_ch_display_info)
+fb_test_overlay_display_unit_blk_rot	v8r1_commandfile_overlay_display.c	/^int fb_test_overlay_display_unit_blk_rot(struct   st_ch_display_info  *ch_display_info,$/;"	f	signature:(struct st_ch_display_info *ch_display_info, struct st_ch_display_info *pan_ch_display_info, int out_format, int wdma_number)
+fb_test_pan_display	v8r1_commandfile_pan_display.c	/^int fb_test_pan_display(char *pic_filename, char* bpp,char* flag)$/;"	f	signature:(char *pic_filename, char* bpp,char* flag)
+fb_test_pan_display	v8r1_commandfile_test.h	/^extern int fb_test_pan_display(char *pic_filename, char* bpp,char* flag);$/;"	p	signature:(char *pic_filename, char* bpp,char* flag)
+fb_test_pan_unit	v8r1_commandfile_pan_display.c	/^int fb_test_pan_unit(char *pic_filename, int bpp,int flag)$/;"	f	signature:(char *pic_filename, int bpp,int flag)
+fd_buffer	v8r1_commandfile_test.h	/^	int fd_buffer;$/;"	m	struct:ion_phys_data	access:public
+file_len	v8r1_commandfile_test.h	/^    int  file_len;$/;"	m	struct:st_ch_display_info	access:public
+file_name	v8r1_commandfile_test.h	/^	char*		file_name;$/;"	m	struct:st_ch_display_info	access:public
+filelen	v8r1_commandfile_test.h	/^    uint32_t            filelen;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+filenames	v8r1_commandfile_pan_display.c	/^char* filenames[2]= {"red_320x480_ARGB8888.bin","blue_320x480_ARGB8888.bin"};$/;"	v
+files	v8r1_commandfile_pan_display.c	/^int files = 2;$/;"	v
+flags	v8r1_commandfile_pan_display.c	/^int flags[2] = {0,0};$/;"	v
+format	v8r1_commandfile_test.h	/^    uint32_t            format;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+free_resource	v8r1_commandfile_comm.c	/^int free_resource()$/;"	f
+free_resource	v8r1_commandfile_test.c	/^extern int free_resource();$/;"	p	file:
+g_ade_fd	v8r1_commandfile_comm.c	/^int    g_ade_fd = -1;$/;"	v
+g_blending_mode	v8r1_commandfile_comm.c	/^int   g_blending_mode = HWC_BLENDING_PREMULT;$/;"	v
+g_blk_rot_dst_format	v8r1_commandfile_overlay_display.c	/^int   g_blk_rot_dst_format = 0;$/;"	v
+g_ch_rgb	v8r1_commandfile_comm.c	/^int   g_ch_rgb = 0;$/;"	v
+g_fb_fd	v8r1_commandfile_comm.c	/^int    g_fb_fd = -1;$/;"	v
+g_fb_fix_screen	v8r1_commandfile_comm.c	/^struct fb_fix_screeninfo g_fb_fix_screen;$/;"	v	typeref:struct:fb_fix_screeninfo
+g_fb_var_screen	v8r1_commandfile_comm.c	/^struct fb_var_screeninfo g_fb_var_screen;$/;"	v	typeref:struct:fb_var_screeninfo
+g_ion_fd	v8r1_commandfile_overlay_display.c	/^int   g_ion_fd = 0;$/;"	v
+g_ion_hnd	v8r1_commandfile_overlay_display.c	/^struct ion_handle     *g_ion_hnd;$/;"	v	typeref:struct:ion_handle
+g_ion_offline_paddr	v8r1_commandfile_overlay_display.c	/^int   g_ion_offline_paddr = 0;$/;"	v
+g_ion_offline_vaddr	v8r1_commandfile_overlay_display.c	/^int   g_ion_offline_vaddr = 0;$/;"	v
+g_ion_wifi_paddr	v8r1_commandfile_overlay_display.c	/^int   g_ion_wifi_paddr = 0;$/;"	v
+g_ion_wifi_vaddr	v8r1_commandfile_overlay_display.c	/^int   g_ion_wifi_vaddr = 0;$/;"	v
+g_ov_ade_fd	v8r1_commandfile_overlay_display.c	/^int   g_ov_ade_fd;$/;"	v
+g_ov_blending_mode	v8r1_commandfile_overlay_display.c	/^int   g_ov_blending_mode = (0xff << 16) | HWC_BLENDING_PREMULT;$/;"	v
+g_ov_fb_fd	v8r1_commandfile_overlay_display.c	/^int   g_ov_fb_fd;$/;"	v
+g_overlay_dst	v8r1_commandfile_comm.c	/^struct OVERLAY_IMAGE_ST  g_overlay_dst;$/;"	v	typeref:struct:OVERLAY_IMAGE_ST
+g_pan_fb_fd	v8r1_commandfile_pan_display.c	/^int    g_pan_fb_fd;$/;"	v
+g_pan_fb_fix_screen	v8r1_commandfile_pan_display.c	/^struct fb_fix_screeninfo g_pan_fb_fix_screen;$/;"	v	typeref:struct:fb_fix_screeninfo
+g_pan_fb_var_screen	v8r1_commandfile_pan_display.c	/^struct fb_var_screeninfo g_pan_fb_var_screen;$/;"	v	typeref:struct:fb_var_screeninfo
+g_pan_fbbuf	v8r1_commandfile_pan_display.c	/^char  *g_pan_fbbuf;$/;"	v
+get_ch_compose_info	v8r1_commandfile_comm.c	/^void get_ch_compose_info(struct st_ch_display_info  *ch_display_info,$/;"	f	signature:(struct st_ch_display_info *ch_display_info, int *file_num, char *filename[], char* ch_list, char* ovly_map, char* rotation, char* dst_rect, struct overlay_resource_info* ov_res, char* ovly_rect, int *offline_count, int * block_count)
+get_ch_compose_info	v8r1_commandfile_test.h	/^extern void get_ch_compose_info(struct st_ch_display_info  *ch_display_info,int *file_num, char *filename[],char* ch_list,$/;"	p	signature:(struct st_ch_display_info *ch_display_info,int *file_num, char *filename[],char* ch_list, char* ovly_map, char* rotation, char* dst_rect, struct overlay_resource_info* ov_res, char* ovly_rect,int *offline_count, int *block_count)
+get_dst_rect_by_rect_str	v8r1_commandfile_comm.c	/^void get_dst_rect_by_rect_str(char* rect, struct ade_rect* dst_rect)$/;"	f	signature:(char* rect, struct ade_rect* dst_rect)
+get_num_by_string	v8r1_commandfile_comm.c	/^void get_num_by_string(int *num_list, char* string)$/;"	f	signature:(int *num_list, char* string)
+get_num_by_string	v8r1_commandfile_comm.c	/^void get_num_by_string(int *num_list, char* string);$/;"	p	file:	signature:(int *num_list, char* string)
+get_overlay_display_rect_info	v8r1_commandfile_comm.c	/^void get_overlay_display_rect_info(struct st_ch_display_info  *ch_display_info, int ch_rot, struct ade_rect ch_dst_rect, struct ade_rect   ovly_out_rect)$/;"	f	signature:(struct st_ch_display_info *ch_display_info, int ch_rot, struct ade_rect ch_dst_rect, struct ade_rect ovly_out_rect)
+get_overlay_display_rect_info	v8r1_commandfile_comm.c	/^void get_overlay_display_rect_info(struct st_ch_display_info  *ch_display_info, int ch_rot, struct ade_rect ch_dst_rect, struct ade_rect   ovly_out_rect);$/;"	p	file:	signature:(struct st_ch_display_info *ch_display_info, int ch_rot, struct ade_rect ch_dst_rect, struct ade_rect ovly_out_rect)
+get_pic_size_by_filename	v8r1_commandfile_comm.c	/^int get_pic_size_by_filename(char *pic_filename , uint32_t* width, uint32_t* height)$/;"	f	signature:(char *pic_filename , uint32_t* width, uint32_t* height)
+get_pic_size_by_filename	v8r1_commandfile_overlay_display.c	/^extern int get_pic_size_by_filename(char *pic_filename , uint32_t* width, uint32_t* height);$/;"	p	file:	signature:(char *pic_filename , uint32_t* width, uint32_t* height)
+get_rect_by_string	v8r1_commandfile_comm.c	/^void get_rect_by_string(struct ade_rect* ch_dst_rect, int ch_num, char* string)$/;"	f	signature:(struct ade_rect* ch_dst_rect, int ch_num, char* string)
+get_rect_by_string	v8r1_commandfile_test.h	/^extern void get_rect_by_string(struct ade_rect* ch_dst_rect, int ch_num, char* string);$/;"	p	signature:(struct ade_rect* ch_dst_rect, int ch_num, char* string)
+get_resource	v8r1_commandfile_comm.c	/^int get_resource()$/;"	f
+get_resource	v8r1_commandfile_test.c	/^extern int get_resource();$/;"	p	file:
+get_xy_by_string	v8r1_commandfile_comm.c	/^void get_xy_by_string(struct st_xy_pos *xy_pos, char* string)$/;"	f	signature:(struct st_xy_pos *xy_pos, char* string)
+has_block_rot	v8r1_commandfile_test.h	/^	uint32_t      has_block_rot;$/;"	m	struct:st_ch_display_info	access:public
+has_sec_ovly	v8r1_commandfile_test.h	/^	uint32_t    has_sec_ovly;$/;"	m	struct:st_ch_display_info	access:public
+height	v8r1_commandfile_test.h	/^    uint32_t            height;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+hnd_id	v8r1_commandfile_test.h	/^    uint32_t            hnd_id;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+ion_fd	v8r1_commandfile_test.h	/^    int  ion_fd;$/;"	m	struct:st_ch_display_info	access:public
+ion_hnd	v8r1_commandfile_test.h	/^    struct ion_handle     *ion_hnd;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::ion_handle	access:public
+ion_issupport_iommu_data	v8r1_commandfile_test.h	/^struct ion_issupport_iommu_data{$/;"	s
+ion_issupport_iommu_data::is_support_iommu	v8r1_commandfile_test.h	/^	int is_support_iommu;$/;"	m	struct:ion_issupport_iommu_data	access:public
+ion_phys_data	v8r1_commandfile_test.h	/^struct ion_phys_data {$/;"	s
+ion_phys_data::fd_buffer	v8r1_commandfile_test.h	/^	int fd_buffer;$/;"	m	struct:ion_phys_data	access:public
+ion_phys_data::phys_h	v8r1_commandfile_test.h	/^	unsigned int phys_h;$/;"	m	struct:ion_phys_data	access:public
+ion_phys_data::phys_l	v8r1_commandfile_test.h	/^	unsigned int phys_l;$/;"	m	struct:ion_phys_data	access:public
+ion_phys_data::size	v8r1_commandfile_test.h	/^	unsigned int size;$/;"	m	struct:ion_phys_data	access:public
+ion_vir_addr	v8r1_commandfile_overlay_display.c	/^int* ion_vir_addr = NULL;$/;"	v
+ion_vir_addr	v8r1_commandfile_test.h	/^    int* ion_vir_addr;$/;"	m	struct:st_ch_display_info	access:public
+is_ov_compose	v8r1_commandfile_test.h	/^	uint32_t	is_ov_compose;$/;"	m	struct:st_ch_display_info	access:public
+is_support_iommu	v8r1_commandfile_test.h	/^	int is_support_iommu;$/;"	m	struct:ion_issupport_iommu_data	access:public
+m_ade_fd	v8r1_commandfile_overlay_switch.c	/^static int m_ade_fd = -1;$/;"	v	file:
+main	v8r1_commandfile_test.c	/^int main(int argc, char**argv)$/;"	f	signature:(int argc, char**argv)
+mem_share_fd	v8r1_commandfile_overlay_switch.c	/^static int mem_share_fd = -1;$/;"	v	file:
+ov_image	v8r1_commandfile_test.h	/^    struct OVERLAY_IMAGE_ST             ov_image;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::OVERLAY_IMAGE_ST	access:public
+overlay_display_ade_img	v8r1_commandfile_overlay_display.c	/^int overlay_display_ade_img(struct st_ch_display_info  *ch_display_info, struct OVERLAY_IMAGE_ST  ov_image, struct st_ch_display_info  *pan_ch_display_info)$/;"	f	signature:(struct st_ch_display_info *ch_display_info, struct OVERLAY_IMAGE_ST ov_image, struct st_ch_display_info *pan_ch_display_info)
+overlay_display_ade_img_blk_rot	v8r1_commandfile_overlay_display.c	/^int overlay_display_ade_img_blk_rot(struct st_ch_display_info  *ch_display_info, $/;"	f	signature:(struct st_ch_display_info *ch_display_info, struct OVERLAY_IMAGE_ST ov_image, struct st_ch_display_info *pan_ch_display_info, int out_format, int wdma_number)
+overlay_display_commit_comp	v8r1_commandfile_overlay_display.c	/^void overlay_display_commit_comp(struct   overlay_resource_info ov_res, int index, int rot, char* ovly_rect) $/;"	f	signature:(struct overlay_resource_info ov_res, int index, int rot, char* ovly_rect)
+overlay_display_commit_offline_comp	v8r1_commandfile_overlay_display.c	/^void overlay_display_commit_offline_comp(int comp_mode, int pattern_index)$/;"	f	signature:(int comp_mode, int pattern_index)
+overlay_display_set_offline_img	v8r1_commandfile_overlay_display.c	/^void overlay_display_set_offline_img(struct   st_ch_display_info  *ch_display_info, int offline_count, int file_count)$/;"	f	signature:(struct st_ch_display_info *ch_display_info, int offline_count, int file_count)
+overlay_get_display_data	v8r1_commandfile_overlay_display.c	/^int overlay_get_display_data(char*  pic_filename, struct OVERLAY_IMAGE_ST*  img)$/;"	f	signature:(char* pic_filename, struct OVERLAY_IMAGE_ST* img)
+overlay_get_image_format	v8r1_commandfile_overlay_display.c	/^int overlay_get_image_format(char *pic_filename, uint32_t* img_format)$/;"	f	signature:(char *pic_filename, uint32_t* img_format)
+overlay_get_ion_mem	v8r1_commandfile_comm.c	/^extern int overlay_get_ion_mem(int* psharefilefd, void** vir_addr, uint32_t* phy_addr, int len, uint32_t* hnd_id);$/;"	p	file:	signature:(int* psharefilefd, void** vir_addr, uint32_t* phy_addr, int len, uint32_t* hnd_id)
+overlay_get_ion_mem	v8r1_commandfile_overlay_display.c	/^int overlay_get_ion_mem(int* psharefilefd, void** vir_addr, uint32_t* phy_addr, int len, uint32_t* hnd_id)$/;"	f	signature:(int* psharefilefd, void** vir_addr, uint32_t* phy_addr, int len, uint32_t* hnd_id)
+overlay_get_pixel_bpp	v8r1_commandfile_overlay_display.c	/^int overlay_get_pixel_bpp(int format)$/;"	f	signature:(int format)
+overlay_get_rotation	v8r1_commandfile_overlay_display.c	/^int overlay_get_rotation(int rot)$/;"	f	signature:(int rot)
+overlay_ion_free	v8r1_commandfile_overlay_display.c	/^int overlay_ion_free(int ion_client, struct ion_handle *ion_hnd)$/;"	f	signature:(int ion_client, struct ion_handle *ion_hnd)
+overlay_ion_supp_smmu	v8r1_commandfile_overlay_display.c	/^int overlay_ion_supp_smmu(int ion_fd)$/;"	f	signature:(int ion_fd)
+overlay_num	v8r1_commandfile_test.h	/^	int			overlay_num;$/;"	m	struct:st_ch_display_info	access:public
+overlay_open_pic_file	v8r1_commandfile_overlay_display.c	/^int overlay_open_pic_file(char *pic_filename, int *picfilefd, struct OVERLAY_IMAGE_ST*  img)$/;"	f	signature:(char *pic_filename, int *picfilefd, struct OVERLAY_IMAGE_ST* img)
+overlay_set_blk_rot	v8r1_commandfile_overlay_display.c	/^int overlay_set_blk_rot(struct   st_ch_display_info  *ch_display_info,$/;"	f	signature:(struct st_ch_display_info *ch_display_info, struct overlay_layer_info *ade_block_info, unsigned long pmem_phy_addr, int img_format, int height, int width, int out_format, int wdma_number)
+overlay_setade_img	v8r1_commandfile_overlay_display.c	/^int overlay_setade_img(struct   st_ch_display_info  *ch_display_info,struct overlay_region_info *img, unsigned long pmem_phy_addr, int img_format, int height, int width)$/;"	f	signature:(struct st_ch_display_info *ch_display_info,struct overlay_region_info *img, unsigned long pmem_phy_addr, int img_format, int height, int width)
+ovly2_ch_count	v8r1_commandfile_overlay_display.c	/^int ovly2_ch_count = 0;$/;"	v
+ovly_output_rect	v8r1_commandfile_test.h	/^	struct ade_rect ovly_output_rect;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::ade_rect	access:public
+pan_displayPic	v8r1_commandfile_pan_display.c	/^void pan_displayPic(char  *pic_filename)$/;"	f	signature:(char *pic_filename)
+pan_get_framebuffer	v8r1_commandfile_pan_display.c	/^int  pan_get_framebuffer( void )$/;"	f	signature:( void )
+pan_set_active_framebuffer	v8r1_commandfile_pan_display.c	/^static void pan_set_active_framebuffer(int bpp,int flag)$/;"	f	file:	signature:(int bpp,int flag)
+pattern	v8r1_commandfile_overlay_display.c	/^struct overlay_resource_info pattern[] = {$/;"	v	typeref:struct:overlay_resource_info
+pg_ov_res	v8r1_commandfile_overlay_display.c	/^struct overlay_resource_info *pg_ov_res = NULL;$/;"	v	typeref:struct:overlay_resource_info
+phy_addr	v8r1_commandfile_test.h	/^    uint32_t            phy_addr;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+phys_h	v8r1_commandfile_test.h	/^	unsigned int phys_h;$/;"	m	struct:ion_phys_data	access:public
+phys_l	v8r1_commandfile_test.h	/^	unsigned int phys_l;$/;"	m	struct:ion_phys_data	access:public
+rotation	v8r1_commandfile_test.h	/^	int			rotation;$/;"	m	struct:st_ch_display_info	access:public
+sec_ovly_count	v8r1_commandfile_overlay_display.c	/^int sec_ovly_count = 0;$/;"	v
+sec_ovly_surf_num	v8r1_commandfile_test.h	/^	uint32_t    sec_ovly_surf_num;$/;"	m	struct:st_ch_display_info	access:public
+share_fd	v8r1_commandfile_test.h	/^    uint32_t            share_fd;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+size	v8r1_commandfile_test.h	/^	unsigned int size;$/;"	m	struct:ion_phys_data	access:public
+src_rect	v8r1_commandfile_test.h	/^	struct ade_rect src_rect;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::ade_rect	access:public
+st_ch_display_info	v8r1_commandfile_test.h	/^struct st_ch_display_info {$/;"	s
+st_ch_display_info::block_rot_addr	v8r1_commandfile_test.h	/^	int*            block_rot_addr;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::cfg_disable	v8r1_commandfile_test.h	/^	uint32_t	cfg_disable;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::ch	v8r1_commandfile_test.h	/^	int			ch;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::ch_cap	v8r1_commandfile_test.h	/^	uint32_t    ch_cap;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::ch_type	v8r1_commandfile_test.h	/^	uint32_t    ch_type;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::comp_mode	v8r1_commandfile_test.h	/^	uint32_t    comp_mode;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::dest_rect	v8r1_commandfile_test.h	/^	struct ade_rect dest_rect;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::ade_rect	access:public
+st_ch_display_info::file_len	v8r1_commandfile_test.h	/^    int  file_len;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::file_name	v8r1_commandfile_test.h	/^	char*		file_name;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::has_block_rot	v8r1_commandfile_test.h	/^	uint32_t      has_block_rot;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::has_sec_ovly	v8r1_commandfile_test.h	/^	uint32_t    has_sec_ovly;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::ion_fd	v8r1_commandfile_test.h	/^    int  ion_fd;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::ion_hnd	v8r1_commandfile_test.h	/^    struct ion_handle     *ion_hnd;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::ion_handle	access:public
+st_ch_display_info::ion_vir_addr	v8r1_commandfile_test.h	/^    int* ion_vir_addr;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::is_ov_compose	v8r1_commandfile_test.h	/^	uint32_t	is_ov_compose;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::ov_image	v8r1_commandfile_test.h	/^    struct OVERLAY_IMAGE_ST             ov_image;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::OVERLAY_IMAGE_ST	access:public
+st_ch_display_info::overlay_num	v8r1_commandfile_test.h	/^	int			overlay_num;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::ovly_output_rect	v8r1_commandfile_test.h	/^	struct ade_rect ovly_output_rect;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::ade_rect	access:public
+st_ch_display_info::rotation	v8r1_commandfile_test.h	/^	int			rotation;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::sec_ovly_surf_num	v8r1_commandfile_test.h	/^	uint32_t    sec_ovly_surf_num;$/;"	m	struct:st_ch_display_info	access:public
+st_ch_display_info::src_rect	v8r1_commandfile_test.h	/^	struct ade_rect src_rect;$/;"	m	struct:st_ch_display_info	typeref:struct:st_ch_display_info::ade_rect	access:public
+st_xy_pos	v8r1_commandfile_test.h	/^struct st_xy_pos {$/;"	s
+st_xy_pos::x	v8r1_commandfile_test.h	/^	int x;$/;"	m	struct:st_xy_pos	access:public
+st_xy_pos::y	v8r1_commandfile_test.h	/^	int y;$/;"	m	struct:st_xy_pos	access:public
+stride	v8r1_commandfile_test.h	/^    uint32_t            stride;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+width	v8r1_commandfile_test.h	/^    uint32_t            width;$/;"	m	struct:OVERLAY_IMAGE_ST	access:public
+x	v8r1_commandfile_test.h	/^	int x;$/;"	m	struct:st_xy_pos	access:public
+y	v8r1_commandfile_test.h	/^	int y;$/;"	m	struct:st_xy_pos	access:public
