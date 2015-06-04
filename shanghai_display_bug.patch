@@ -1,0 +1,401 @@
+diff --git a/arch/arm64/boot/dts/hi6220.dtsi b/arch/arm64/boot/dts/hi6220.dtsi
+index 77f6caf..f41b117 100644
+--- a/arch/arm64/boot/dts/hi6220.dtsi
++++ b/arch/arm64/boot/dts/hi6220.dtsi
+@@ -693,6 +693,7 @@
+ 				reg = <0x0 0xf4107800 0x0 0x100>;
+ 				clocks = <&clock_media  HI6220_DSI_PCLK>;
+ 				clock-names = "pclk_dsi";
++				dsi-gpio = <&gpio0 1 0>;
+ 				vc = <0>;
+ 				encoder-slave = <&adv7533>;
+ 			};
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index a798a9e..916f5d06 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -28,7 +28,7 @@ CONFIG_BLK_DEV_INITRD=y
+ CONFIG_KALLSYMS_ALL=y
+ CONFIG_EMBEDDED=y
+ # CONFIG_DRM_HISI_FBDEV is not set
+-# CONFIG_DRM_HISI_FBDEV is not set
++//# CONFIG_DRM_HISI_FBDEV is not set
+ CONFIG_SLAB=y
+ CONFIG_PROFILING=y
+ CONFIG_JUMP_LABEL=y
+diff --git a/drivers/gpu/drm/drm_crtc.c b/drivers/gpu/drm/drm_crtc.c
+index e79c8d3..813d33a 100644
+--- a/drivers/gpu/drm/drm_crtc.c
++++ b/drivers/gpu/drm/drm_crtc.c
+@@ -1988,13 +1988,12 @@ int drm_mode_getconnector(struct drm_device *dev, void *data,
+ 			encoders_count++;
+ 		}
+ 	}
+-
++	
+ 	if (out_resp->count_modes == 0) {
+ 		connector->funcs->fill_modes(connector,
+ 					     dev->mode_config.max_width,
+ 					     dev->mode_config.max_height);
+ 	}
+-
+ 	/* delayed so we get modes regardless of pre-fill_modes state */
+ 	list_for_each_entry(mode, &connector->modes, head)
+ 		if (drm_mode_expose_to_userspace(mode, file_priv))
+diff --git a/drivers/gpu/drm/hisilicon/hisi_drm_ade.c b/drivers/gpu/drm/hisilicon/hisi_drm_ade.c
+index 2c17b7a..18065e9 100644
+--- a/drivers/gpu/drm/hisilicon/hisi_drm_ade.c
++++ b/drivers/gpu/drm/hisilicon/hisi_drm_ade.c
+@@ -1,4 +1,4 @@
+-/*
++	/*
+  * Hisilicon Terminal SoCs drm driver
+  *
+  * Copyright (c) 2014-2015 Hisilicon Limited.
+@@ -9,7 +9,7 @@
+  * published by the Free Software Foundation.
+  *
+  */
+-
++#include <linux/clk-private.h>
+ #include <linux/bitops.h>
+ #include <linux/clk.h>
+ #include <video/display_timing.h>
+@@ -25,6 +25,9 @@
+ #include "hisi_ldi_reg.h"
+ #include "hisi_drm_ade.h"
+ 
++static int kong_pixclk_ade = 0;
++module_param(kong_pixclk_ade, int, 0644);
++MODULE_PARM_DESC(kong_pixclk_ade,"Get kongxinwei from user\n");
+ 
+ #define SC_MEDIA_RSTDIS		(0x530)
+ #define SC_MEDIA_RSTEN		(0x52C)
+@@ -229,9 +232,18 @@ static void ldi_init(struct hisi_drm_ade_crtc *crtc_ade)
+ 	u32 vfront_porch, vback_porch, vsync_len;
+ 	u32 plr_flags;
+ 	u32 ldi_mask;
++	u32   dsp_ratio  = 0;
++	u32   peri_ratio = 0;
++	u32   dsp_div  = 0;
++	u32   peri_div = 0;
++
+ 	struct drm_display_mode *mode = crtc_ade->dmode;
++	struct clk *parent_clk = NULL;
++	struct clk *parent_pll0_clk;
++	struct clk *parent_pll1_clk;
++	
+ 	u8 __iomem *ade_base = crtc_ade->ade_base;
+-
++	
+ 	/*
+ 	 * Timing setting
+ 	 */
+@@ -254,7 +266,41 @@ static void ldi_init(struct hisi_drm_ade_crtc *crtc_ade)
+ 	set_LDI_VRT_CTRL1_vsw(ade_base, vsync_len);
+ 	writel(plr_flags, ade_base + LDI_PLR_CTRL_REG);
+ 	set_LDI_DSP_SIZE_size(ade_base, mode->hdisplay, mode->vdisplay);
+-	ret = clk_set_rate(crtc_ade->ade_pix_clk, mode->clock * 1000);
++	
++	parent_pll0_clk = clk_get_parent(crtc_ade->ade_pix_clk);
++	
++	parent_pll1_clk = clk_get_parent_by_index(parent_pll0_clk, 1);
++	
++	dsp_div  = parent_pll0_clk->rate / (mode->clock * 1000);
++	peri_div = parent_pll1_clk->rate / (mode->clock * 1000);
++
++	if ((dsp_div == 0) && (peri_div == 0)) {
++		DRM_ERROR("ade_parent invalid clk_rate");
++	} else if (peri_div == 0) {
++		parent_clk = parent_pll0_clk;
++		DRM_ERROR("balong_fb_set_clock_rate: patern clk is sys_pll \n");
++	} else if (dsp_div == 0) {
++		parent_clk = parent_pll1_clk;
++		DRM_ERROR("balong_fb_set_clock_rate: patern clk is media pll \n");
++	} else {
++		dsp_ratio  = ((parent_pll0_clk->rate % (mode->clock * 1000)) * 1000) / dsp_div;
++		peri_ratio = ((parent_pll1_clk->rate % (mode->clock * 1000)) * 1000) / peri_div;
++
++		if (dsp_ratio <= peri_ratio) {
++			parent_clk = parent_pll0_clk;
++		} else {
++			parent_clk = parent_pll1_clk;
++		}
++	}
++
++	/* the parent of pixel clock is pixel gate clock
++	* the parent of pixel gate clock is DSP PLL and PERI PLL
++	*/
++	clk_set_parent(parent_pll0_clk, parent_clk);
++	
++	parent_pll0_clk = clk_get_parent(crtc_ade->ade_pix_clk);
++	
++	ret = clk_set_rate(crtc_ade->ade_pix_clk, mode->clock *1000 + kong_pixclk_ade);
+ 	if (ret) {
+ 		DRM_ERROR("set ade_pixel_clk_rate fail\n");
+ 		return;
+@@ -499,12 +545,14 @@ static int hisi_drm_ade_dts_parse(struct platform_device *pdev,
+ 		DRM_ERROR("failed to parse the ADE_CORE\n");
+ 	    return -ENODEV;
+ 	}
++	
+ 	crtc_ade->media_noc_clk = devm_clk_get(&pdev->dev,
+ 					"aclk_codec_jpeg_src");
+ 	if (crtc_ade->media_noc_clk == NULL) {
+ 		DRM_ERROR("failed to parse the CODEC_JPEG\n");
+ 	    return -ENODEV;
+ 	}
++	
+ 	crtc_ade->ade_pix_clk = devm_clk_get(&pdev->dev, "clk_ade_pix");
+ 	if (crtc_ade->ade_pix_clk == NULL) {
+ 		DRM_ERROR("failed to parse the ADE_PIX_SRC\n");
+diff --git a/drivers/gpu/drm/hisilicon/hisi_drm_drv.c b/drivers/gpu/drm/hisilicon/hisi_drm_drv.c
+index d2e4098..893e2f0 100644
+--- a/drivers/gpu/drm/hisilicon/hisi_drm_drv.c
++++ b/drivers/gpu/drm/hisilicon/hisi_drm_drv.c
+@@ -98,8 +98,8 @@ static int hisi_drm_load(struct drm_device *drm_dev, unsigned long flags)
+ 	int ret;
+ 	struct hisi_drm_private *private;
+ 
+-	/* debug setting
+-	drm_debug = DRM_UT_DRIVER|DRM_UT_KMS|DRM_UT_CORE|DRM_UT_PRIME; */
++	//debug setting
++	drm_debug = DRM_UT_DRIVER|DRM_UT_KMS|DRM_UT_CORE|DRM_UT_PRIME;
+ 	DRM_DEBUG_DRIVER("enter.\n");
+ 
+ 	private = kzalloc(sizeof(struct hisi_drm_private), GFP_KERNEL);
+diff --git a/drivers/gpu/drm/hisilicon/hisi_drm_dsi.c b/drivers/gpu/drm/hisilicon/hisi_drm_dsi.c
+index c7733e7..982562d 100644
+--- a/drivers/gpu/drm/hisilicon/hisi_drm_dsi.c
++++ b/drivers/gpu/drm/hisilicon/hisi_drm_dsi.c
+@@ -13,6 +13,7 @@
+ #include <linux/of_device.h>
+ #include <linux/clk.h>
+ #include <linux/types.h>
++#include <linux/gpio/consumer.h>
+ 
+ #include <video/mipi_display.h>
+ #include <video/videomode.h>
+@@ -30,6 +31,37 @@
+ #include "hisi_mipi_reg.h"
+ #include "hisi_drm_dsi.h"
+ 
++static int kongvalue = 0;
++module_param(kongvalue, int, 0644);
++MODULE_PARM_DESC(kongvalue,"Get kongxinwei from user\n");
++
++static int kong_vsa = 1;
++module_param(kong_vsa, int, 0644);
++MODULE_PARM_DESC(kong_vsa,"Get kongxinwei from user\n");
++
++static int kong_vbp = 1;
++module_param(kong_vbp, int, 0644);
++MODULE_PARM_DESC(kong_vbp,"Get kongxinwei from user\n");
++
++static int kong_vfp = 1;
++module_param(kong_vfp, int, 0644);
++MODULE_PARM_DESC(kong_vfp,"Get kongxinwei from user\n");
++
++static int kong_vact = 1;
++module_param(kong_vact, int, 0644);
++MODULE_PARM_DESC(kong_vact,"Get kongxinwei from user\n");
++
++static int kong_hbp = 1;
++module_param(kong_hbp, int, 0644);
++MODULE_PARM_DESC(kong_hbp,"Get kongxinwei from user\n");
++
++static int kong_hfp = 1;
++module_param(kong_hfp, int, 0644);
++MODULE_PARM_DESC(kong_hfp,"Get kongxinwei from user\n");
++
++static int kong_cmd = 1;
++module_param(kong_cmd, int, 0644);
++MODULE_PARM_DESC(kong_cmd,"Get kongxinwei from user\n");
+ 
+ #define connector_to_dsi(connector) \
+ 	container_of(connector, struct hisi_dsi, connector)
+@@ -38,7 +70,8 @@
+ 
+ #define DEFAULT_MIPI_CLK_RATE   19200000
+ #define MAX_TX_ESC_CLK    (10)
+-#define DSI_BURST_MODE    DSI_NON_BURST_SYNC_PULSES
++//#define DSI_BURST_MODE    DSI_NON_BURST_SYNC_PULSES
++#define DSI_BURST_MODE    DSI_NON_BURST_SYNC_EVENTS
+ #define ROUND(x, y) ((x) / (y) + ((x) % (y) * 10 / (y) >= 5 ? 1 : 0))
+ 
+ #define USE_DEFAULT_720P_MODE 0
+@@ -89,6 +122,7 @@ struct hisi_dsi {
+ 	struct drm_i2c_encoder_driver *drm_i2c_driver;
+ 	struct clk *dsi_cfg_clk;
+ 	struct videomode vm;
++	struct gpio_desc *gpio_dsi;
+ 
+ 	u8 __iomem *reg_base;
+ 	u8 color_mode;
+@@ -290,6 +324,14 @@ void get_dsi_phy_register(u32 *phy_freq,
+ 	*phy_freq = 1000 * m_pll / (t_cfg_clk * n_pll * q_pll);
+ 	ui = 1000 / (*phy_freq);
+ 
++	printk("i phy_freq == %d\n", *phy_freq);
++	printk("i m_pll == %d\n", m_pll);
++        printk("i t_cfg_clk == %d\n", t_cfg_clk);
++        printk("i n_pll == %d\n", n_pll);
++        printk("i q_pll == %d\n", q_pll);
++        printk("i ui == %d\n", ui);
++	
++	
+ 	phy_register->clk_t_lpx = ROUND(50, 8 * ui);
+ 	phy_register->clk_t_hs_prepare = ROUND(133, 16 * ui) - 1;
+ 
+@@ -318,7 +360,7 @@ void get_dsi_phy_register(u32 *phy_freq,
+ 		(phy_register->lane_byte_clk / MAX_TX_ESC_CLK);
+ 
+ 	phy_register->burst_mode = DSI_BURST_MODE;
+-	DRM_DEBUG_DRIVER("exit success.\n");
++//	DRM_DEBUG_DRIVER("exit success.\n");
+ }
+ 
+ int mipi_init(struct hisi_dsi *dsi)
+@@ -589,7 +631,7 @@ int mipi_init(struct hisi_dsi *dsi)
+ 	set_MIPIDSI_VID_VFP_LINES(dsi->vm.vfront_porch);
+ 	set_MIPIDSI_VID_VACTIVE_LINES(dsi->vm.vactive);
+ 	set_MIPIDSI_VID_PKT_SIZE(dsi->vm.hactive);
+-
++#if 0 
+ 	if (dsi->mode_flags & MIPI_DSI_MODE_VIDEO) {
+ 		set_MIPIDSI_VID_MODE_CFG_lp_vsa_en(1);
+ 		set_MIPIDSI_VID_MODE_CFG_lp_vbp_en(1);
+@@ -604,6 +646,21 @@ int mipi_init(struct hisi_dsi *dsi)
+ 	 /*config max read time*/
+ 		set_MIPIDSI_PHY_TMR_CFG_max_rd_time(0xFFFF);
+ 	}
++#endif
++	if (dsi->mode_flags & MIPI_DSI_MODE_VIDEO) {
++		set_MIPIDSI_VID_MODE_CFG_lp_vsa_en(kong_vsa);
++		set_MIPIDSI_VID_MODE_CFG_lp_vbp_en(kong_vbp);
++		set_MIPIDSI_VID_MODE_CFG_lp_vfp_en(kong_vfp);
++		set_MIPIDSI_VID_MODE_CFG_lp_vact_en(kong_vact);
++		set_MIPIDSI_VID_MODE_CFG_lp_hbp_en(kong_hbp);
++		set_MIPIDSI_VID_MODE_CFG_lp_hfp_en(kong_hfp);
++	 /*VSA/VBP/VFP max transfer byte in LP mode*/
++		set_MIPIDSI_DPI_CFG_LP_TIM(0);
++	 /*enable LP command transfer*/
++		set_MIPIDSI_VID_MODE_CFG_lp_cmd_en(kong_cmd);
++	 /*config max read time*/
++		set_MIPIDSI_PHY_TMR_CFG_max_rd_time(0xFFFF);
++	}
+ 
+ 	/* Configure core's phy parameters */
+ 	set_MIPIDSI_BTA_TO_CNT_bta_to_cnt(4095);
+@@ -738,7 +795,7 @@ static void hisi_drm_encoder_mode_set(struct drm_encoder *encoder,
+ 	struct drm_encoder_slave_funcs *sfuncs = get_slave_funcs(encoder);
+ 	u32 dphy_freq_need;
+ 	u32 dphy_freq_true;
+-
++	
+ 	DRM_DEBUG_DRIVER("enter.\n");
+ 	vm->pixelclock = mode->clock/1000;
+ 	vm->hactive = mode->hdisplay;
+@@ -749,13 +806,21 @@ static void hisi_drm_encoder_mode_set(struct drm_encoder *encoder,
+ 	vm->hfront_porch = mode->hsync_start - mode->hdisplay;
+ 	vm->hback_porch = mode->htotal - mode->hsync_end;
+ 	vm->hsync_len = mode->hsync_end - mode->hsync_start;
+-
++	
+ 	/* laneBitRate >= pixelClk*24/lanes */
+ 	if (vm->vactive == 720 && vm->pixelclock == 75)
+ 		dphy_freq_true = dphy_freq_need = 640; /* for 720p 640M is more stable */
+ 	else
+-		dphy_freq_true = dphy_freq_need = vm->pixelclock*24/dsi->lanes;
++		dphy_freq_true =
++		dphy_freq_need=((vm->pixelclock)*24/dsi->lanes) + kongvalue;
++        
++	printk("\n i love this module param  kongvalue== %d\n", kongvalue);
++	printk("i ade ldi pixelclock == %d\n",vm->pixelclock);
++	
+ 	get_dsi_phy_register(&dphy_freq_true, &dsi->phy_register);
++	
++	printk("i dphy_freq_true == %d\n", dphy_freq_true);
++	printk("i dphy_freq_need == %d\n", dphy_freq_need);
+ 
+ 	vm->flags = 0;
+ 	if (mode->flags & DRM_MODE_FLAG_PHSYNC)
+@@ -769,7 +834,7 @@ static void hisi_drm_encoder_mode_set(struct drm_encoder *encoder,
+ 
+ 	if (sfuncs->mode_set)
+ 		sfuncs->mode_set(encoder, mode, adjusted_mode);
+-	DRM_DEBUG_DRIVER("exit success: pixelclk=%d,dphy_freq_need=%d, dphy_freq_true=%d\n",
++	DRM_DEBUG_DRIVER("exit success: pixelclk=%d\n,dphy_freq_need=%d\n, dphy_freq_true=%d\n",
+ 			(u32)vm->pixelclock, dphy_freq_need, dphy_freq_true);
+ }
+ 
+@@ -815,6 +880,7 @@ hisi_dsi_detect(struct drm_connector *connector, bool force)
+ 
+ 	DRM_DEBUG_DRIVER("exit success. status=%d\n", status);
+ 	return status;
++//	return connector_status_connected;
+ }
+ 
+ static void hisi_dsi_connector_destroy(struct drm_connector *connector)
+@@ -983,6 +1049,15 @@ static int hisi_dsi_probe(struct platform_device *pdev)
+ 		ret = -ENOMEM;
+ 	}
+ 
++	dsi->gpio_dsi = devm_gpiod_get_optional(&pdev->dev, "dsi", GPIOD_OUT_HIGH);
++	if (IS_ERR(dsi->gpio_dsi))
++		return PTR_ERR(dsi->gpio_dsi);
++
++	if (dsi->gpio_dsi) {
++		mdelay(5);
++		gpiod_set_value(dsi->gpio_dsi, 0);
++	}
++	
+ 	dsi->dsi_cfg_clk = clk_get(&pdev->dev, "pclk_dsi");
+ 	if (IS_ERR(dsi->dsi_cfg_clk)) {
+ 		dev_info(&pdev->dev, "failed to get dsi clock");
+diff --git a/drivers/gpu/drm/i2c/adv7533.c b/drivers/gpu/drm/i2c/adv7533.c
+index 47888ee..c83b07b 100644
+--- a/drivers/gpu/drm/i2c/adv7533.c
++++ b/drivers/gpu/drm/i2c/adv7533.c
+@@ -271,16 +271,16 @@ static void adv7533_hotplug_work_func(struct work_struct *work)
+ 	struct adv7533 *adv7533;
+ 	bool hpd_event_sent;
+ 
+-	DRM_INFO("HDMI: hpd work in\n");
++//	DRM_INFO("HDMI: hpd work in\n");
+ 	adv7533 = container_of(work, struct adv7533, hotplug_work.work);
+ 
+ 	if (adv7533->encoder && adv7533_hpd(adv7533)) {
+ 		hpd_event_sent = drm_helper_hpd_irq_event(adv7533->encoder->dev);
+-		DRM_INFO("HDMI: hpd_event_sent=%d\n", hpd_event_sent);
++//		DRM_INFO("HDMI: hpd_event_sent=%d\n", hpd_event_sent);
+ 	}
+ 
+ 	wake_up_all(&adv7533->wq);
+-	DRM_INFO("HDMI: hpd work out\n");
++//	DRM_INFO("HDMI: hpd work out\n");
+ }
+ 
+ static irqreturn_t adv7533_irq_handler(int irq, void *devid)
+diff --git a/drm/tests/modetest/modetest.c b/drm/tests/modetest/modetest.c
+index 53dfe05..90b9f05 100644
+--- a/drm/tests/modetest/modetest.c
++++ b/drm/tests/modetest/modetest.c
+@@ -602,7 +602,7 @@ static struct resources *get_resources(struct device *dev)
+ 
+ 	get_resource(res, res, crtc, Crtc);
+ 	get_resource(res, res, encoder, Encoder);
+-	get_resource(res, res, connector, Connector);
++	get_resource(res, res, connector, Connector); //key
+ 	get_resource(res, res, fb, FB);
+ 
+ #define get_properties(_res, __res, type, Type)					\
+@@ -1458,7 +1458,7 @@ int main(int argc, char **argv)
+ 	int drop_master = 0;
+ 	int test_vsync = 0;
+ 	int test_cursor = 0;
+-	const char *modules[] = { "i915", "radeon", "nouveau", "vmwgfx", "omapdrm", "exynos", "tilcdc", "msm", "sti", "tegra", "imx-drm", "rockchip" };
++	const char *modules[] = { "i915", "hisi", "radeon", "nouveau", "vmwgfx", "omapdrm", "exynos", "tilcdc", "msm", "sti", "tegra", "imx-drm", "rockchip" };
+ 	char *device = NULL;
+ 	char *module = NULL;
+ 	unsigned int i;
